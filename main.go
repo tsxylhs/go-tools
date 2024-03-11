@@ -43,7 +43,7 @@ func main() {
 			FROM information_schema.columns 
 			WHERE table_schema = ? AND table_name = ?`
 
-	cognitivesvc := []string{"person_face_feature"}
+	//cognitivesvc := []string{"person_face_feature"}
 	device := []string{"bi_device_info",
 		"device",
 		"device_group"}
@@ -68,7 +68,7 @@ func main() {
 	handler := []string{
 		"system_config"}
 	tableMap := make(map[string][]string)
-	tableMap["cognitivesvcx"] = cognitivesvc
+	//tableMap["cognitivesvcx"] = cognitivesvc
 	tableMap["device"] = device
 	tableMap["guns"] = guns
 	tableMap["map"] = maps
@@ -78,17 +78,17 @@ func main() {
 	tableMap["system_config_handler"] = handler
 
 	createsql := `
-          use ddd;
-		  drop table if exists ?_logs;
-	      create table ?_logs
-			(  id  int auto_increment
-				primary key,
-				operation      varchar(30) not null,
-				operation_time datetime    not null,
-				operation_id   int         null,
-				operate_params text        null
-			)
-				charset = utf8;`
+use ddd;
+drop table if exists ?_logs;
+create table ?_logs
+(  id  int auto_increment
+	primary key,
+	operation      varchar(30) not null,
+	operation_time datetime    not null,
+	operation_id   int         null,
+	operate_params text        null
+)
+	charset = utf8;`
 	insert_trigger := `drop trigger if exists xxx_insert_trigger;
 	 create  trigger xxx_insert_trigger
 		after insert
