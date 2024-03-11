@@ -13,7 +13,7 @@ func ExtractJPGPathsFromFile(filePath string) ([]string, error) {
 	}
 	defer file.Close()
 
-	re := regexp.MustCompile(`/intersense/images/.*\.jpg`)
+	re := regexp.MustCompile(`/images/.*\.jpg`)
 
 	var matches []string
 	scanner := bufio.NewScanner(file)

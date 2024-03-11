@@ -19,7 +19,7 @@ func main() {
 		os.Exit(1)
 	}
 	fmt.Println("使用的域名：", args[0])
-	fmt.Println("正则匹配:", args[1])
+	fmt.Println("日志路径:", args[1])
 
 	err := filepath.Walk(args[1], func(path string, info os.FileInfo, err error) error {
 		if err != nil {
