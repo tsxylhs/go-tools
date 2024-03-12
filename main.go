@@ -19,7 +19,7 @@ type Field struct {
 
 func main() {
 	// 设置数据库连接信息
-	dsn := "root:sensetime2021@tcp(10.53.24.29:3306)/oms"
+	dsn := "root:password@tcp(xxx.xxx.xxx:3306)/oms"
 
 	// 连接数据库
 	db, err := sql.Open("mysql", dsn)
